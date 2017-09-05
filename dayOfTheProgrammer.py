@@ -2,6 +2,7 @@
 
 # https://www.hackerrank.com/challenges/day-of-the-programmer?utm_campaign=challenge-recommendation&utm_medium=email&utm_source=24-hour-campaign
 
+#!/bin/python
 
 import sys
 import calendar, datetime
@@ -13,9 +14,9 @@ def solve(year):
         if ( i == 2 ): # if it's february
             if year == 1918:
                 if ( year % 4 == 0):
-                    numOfDays += ( 29 - 14)
+                    numOfDays += ( 29 - 14 + 1)
                 else:
-                    numOfDays += ( 28 - 14)
+                    numOfDays += ( 28 - 14 + 1)
             elif 1700 <= year <= 1917: 
                 if ( year % 4 == 0):
                     numOfDays += 29
@@ -31,7 +32,7 @@ def solve(year):
             numOfDays += end
             if 256 - numOfDays <= 30:
                 dateObj = datetime.date(year,i + 1, 256-numOfDays)
-                return dateObj.strftime("%d.%m.%Y")
+                return '{}.{:0>2}.{}'.format(256-numOfDays, i + 1, year)
 
  
         
