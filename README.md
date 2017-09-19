@@ -1,1 +1,3 @@
 # miscellaneous
+
+Some fun codes
